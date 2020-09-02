@@ -25,3 +25,15 @@ object baigorria{
 		empanadasVendidas = qEmpanadas
 	}	
 }
+
+// Dueño
+
+object gimenez{
+	var fondoSueldos = 300000
+	
+	method pagarSueldos(empleado){
+		fondoSueldos -= empleado.Sueldo()
+		
+	}
+	
+}
