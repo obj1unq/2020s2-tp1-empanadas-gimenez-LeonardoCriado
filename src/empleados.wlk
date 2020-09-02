@@ -4,14 +4,41 @@
 
 object galvan{
 	var sueldoACobrar = 15000	
+	var deuda = 0
+	var dinero = 0
+	
+	
+	method deuda(){
+		return deuda
+	}
+	
+	method dinero(){
+		return dinero
+	}
+	
+	method sueldoACobrar(){
+		return sueldoACobrar	
+	}
 	
 	method sueldo(){
-		return sueldoACobrar	
+		self.sueldoACobrar()
+		self.pagarDeudas(self.sueldoACobrar())						
+	}
+	
+	method pagarDeudas(monto){
+		dinero = 0.max(dinero + monto - deuda)
+		deuda = 0.max(deuda - monto)
 	}
 	
 	method nuevoSueldo(salario){
 		sueldoACobrar = salario
 	}
+	
+	method gastar(cuanto){
+		deuda = 0.max(deuda + cuanto - dinero)
+		dinero = 0.max(dinero - cuanto)
+	}
+	
 }
 
 object baigorria{
