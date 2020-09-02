@@ -22,7 +22,7 @@ object galvan{
 	
 	method sueldo(){
 		self.sueldoACobrar()
-		self.pagarDeudas(self.sueldoACobrar())						
+		self.pagarDeudas(sueldoACobrar)						
 	}
 	
 	method pagarDeudas(monto){
