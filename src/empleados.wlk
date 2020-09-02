@@ -16,8 +16,16 @@ object galvan{
 
 object baigorria{
 	var empanadasVendidas = 0
+	var salarioAcumulado = 0
+	
 	
 	method sueldo(){
+		self.salarioMes()
+		salarioAcumulado += self.salarioMes()
+		empanadasVendidas = 0				
+	}
+	
+	method salarioMes(){
 		return empanadasVendidas * 15				
 	}
 	
