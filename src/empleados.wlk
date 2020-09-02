@@ -21,8 +21,8 @@ object galvan{
 	}
 	
 	method sueldo(){
-		self.sueldoACobrar()
-		self.pagarDeudas(sueldoACobrar)						
+		self.pagarDeudas(sueldoACobrar)
+		return sueldoACobrar						
 	}
 	
 	method pagarDeudas(monto){
@@ -46,14 +46,18 @@ object baigorria{
 	var salarioAcumulado = 0
 	
 	
-	method sueldo(){
-		self.salarioMes()
-		salarioAcumulado += self.salarioMes()
-		empanadasVendidas = 0				
+	method salarioACobrar(){
+		return empanadasVendidas * 	15
 	}
 	
-	method salarioMes(){
-		return empanadasVendidas * 15				
+	method sueldo(){
+		salarioAcumulado += self.salarioACobrar()
+		return self.salarioACobrar()
+		//empanadasVendidas = 0					
+	}
+
+	method totalCobrado(){
+		return salarioAcumulado
 	}
 	
 	method empanadasVendidas(qEmpanadas){
