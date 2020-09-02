@@ -14,5 +14,14 @@ object galvan{
 	}
 }
 
-
-
+object baigorria{
+	var empanadasVendidas = 0
+	
+	method Sueldo(){
+		return empanadasVendidas * 15				
+	}
+	
+	method empanadasVendidas(qEmpanadas){
+		empanadasVendidas = qEmpanadas
+	}	
+}
