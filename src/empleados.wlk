@@ -44,16 +44,13 @@ object galvan{
 object baigorria{
 	var empanadasVendidas = 0
 	var salarioAcumulado = 0
-	
-	
-	method salarioACobrar(){
-		return empanadasVendidas * 	15
-	}
+	var sueldoACobrar = 0
 	
 	method sueldo(){
-		salarioAcumulado += self.salarioACobrar()
-		return self.salarioACobrar()
-		//empanadasVendidas = 0					
+		sueldoACobrar = empanadasVendidas * 15
+		salarioAcumulado += sueldoACobrar
+		empanadasVendidas = 0	
+		return sueldoACobrar				
 	}
 
 	method totalCobrado(){
@@ -62,7 +59,8 @@ object baigorria{
 	
 	method empanadasVendidas(qEmpanadas){
 		empanadasVendidas += qEmpanadas
-	}	
+	}
+		
 }
 
 // Dueño
